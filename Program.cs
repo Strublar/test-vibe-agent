@@ -9,6 +9,7 @@ namespace TestVibeAgent
             var builder = WebApplication.CreateBuilder(args);
 
             // Configuration des services
+            builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
@@ -47,17 +48,8 @@ namespace TestVibeAgent
             app.UseHttpsRedirection();
             app.UseCors();
 
-            // Endpoint ping qui renvoie pong
-            app.MapGet("/ping", () =>
-            {
-                return Results.Ok("pong");
-            })
-            .WithName("Ping")
-            .WithOpenApi(operation => new(operation)
-            {
-                Summary = "Endpoint de test ping",
-                Description = "Renvoie 'pong' pour vérifier que l'API fonctionne"
-            });
+            // Configuration du routing pour les contrôleurs
+            app.MapControllers();
 
             // Endpoint racine pour information
             app.MapGet("/", () =>
