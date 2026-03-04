@@ -1,0 +1,21 @@
+{
+  "name": "hello-world-app",
+  "version": "1.0.0",
+  "description": "Une application simple qui affiche Hello World",
+  "main": "hello.js",
+  "scripts": {
+    "start": "node hello.js",
+    "test": "echo \"Pas de tests spécifiés\" && exit 0"
+  },
+  "keywords": [
+    "hello-world",
+    "javascript",
+    "nodejs",
+    "console"
+  ],
+  "author": "Vibe Agent",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
